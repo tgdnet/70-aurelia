@@ -1,0 +1,16 @@
+﻿@*//info: inicjalizacja aurelii i podanie informacji o pliku konfiguracyjnym*@
+@*//info: plik konfiguracyjny = main.ts*@
+<div aurelia-app="main">
+    <div class="splash">
+        <div class="message">Aurelia Navigation Skeleton</div>
+        <i class="fa fa-spinner fa-spin"></i>
+    </div>
+    @*//info: załadowanie system.js*@
+    <script src="jspm_packages/system.js"></script>
+    @*//info: załadowanie konfiguracji odnośnie np. bindingów i deklaracji referencji*@
+    <script src="config.js"></script>
+    <script>
+        //info: wystartowanie aurelii
+        System.import('aurelia-bootstrapper');
+    </script>
+</div>

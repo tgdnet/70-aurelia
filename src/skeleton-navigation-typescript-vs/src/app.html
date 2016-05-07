@@ -1,0 +1,15 @@
+<template>
+    <!--//info: za?adowanie komponentu nav-bar -->
+    <require from="nav-bar.html"></require>
+
+    <!--//info: za?adowanie pliku bootstrap.css -->
+    <require from="bootstrap/css/bootstrap.css"></require>
+
+    <!--//info: stworzenie komponentu nav-bar-->
+    <nav-bar router.bind="router"></nav-bar>
+
+    <div class="page-host">
+        <!--//info: element w którym s? wy?wietlane widoki na podstawie tablicy routingu-->
+        <router-view></router-view>
+    </div>
+</template>

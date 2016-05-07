@@ -1,0 +1,32 @@
+<template>
+    <require from="size"></require>
+    <require from="blur-image"></require>
+
+    Take:
+    <!--//info: stworzenie elementu zawieraj?cego dowi?zanie do warto?ci takeValue (dwustronne dowi?zanie)-->
+    <input type="text" class="form-control" value.bind="takeValue" />
+    Skip:
+    <input type="text" class="form-control" value.bind="skipValue" />
+
+    <section class="au-animate">
+        <h2>${heading}</h2>
+        <div class="row au-stagger">
+            Width:<input type="text" value.bind="widthValue" class="form-control" />
+            Height:<input type="text" value.bind="heightValue" class="form-control" />
+            <div class="col-sm-6 col-md-3 card-container au-animate"
+                 repeat.for="user of users | skip:skipValue | take:takeValue">
+                <div class="card">
+                    <canvas class="header-bg" blur-image.bind="image"
+                            sizeelement="height.bind: heightValue; width.bind: widthValue"></canvas>
+                    <div class="avatar">
+                        <img src.bind="user.avatar_url" crossorigin ref="image" />
+                    </div>
+                    <div class="content">
+                        <p class="name">${user.login}</p>
+                        <p><a target="_blank" class="btn btn-default" href.bind="user.html_url">Contact</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</template>
